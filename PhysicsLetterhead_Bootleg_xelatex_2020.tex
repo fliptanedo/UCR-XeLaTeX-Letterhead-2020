@@ -1,0 +1,142 @@
+% Based on the UCR VISUAL IDENTITY BRAND GUIDELINES
+% Developed by Flip Tanedo, who takes no responsibility 
+% for how you use this.
+
+%% REQUIRED: 
+% 	XeLaTeX ("LaTeX + Font Support")
+%	Rift font: https://www.dafontfree.io/download/rift/
+% 	Fira Sans font (Google Fonts)
+
+\documentclass[12pt]{article}
+\usepackage{parskip}
+\usepackage{graphicx}
+\usepackage{setspace}
+	\onehalfspacing
+% \graphicspath{{figures/}}
+
+%% FOOTER from tex.stackexchange: 42073
+\usepackage{wallpaper}
+\LLCornerWallPaper{1}{footerbgshort}
+
+% COLORS
+\usepackage{xcolor}
+	\definecolor{UCRnavy}{RGB}{14,76,146} % my remix
+	\definecolor{UCRblue}{RGB}{45,108,192}
+
+% Section
+\usepackage{sectsty}
+\sectionfont{\Large \UCRriftsec \color{UCRnavy}}
+
+
+% FONTS
+\usepackage[no-math]{fontspec}
+	\setmainfont{EB Garamond}
+	\newfontfamily\UCRriftsec[
+		Ligatures=TeX, 
+		LetterSpace=10.0, 
+		UprightFont={* Bold}]{Rift}
+	\newfontfamily\UCRrift[
+		Ligatures=TeX, 
+		LetterSpace=15.0, 
+		UprightFont={* Bold}, 
+		SizeFeatures={Size=10}]{Rift}
+	\newfontfamily\UCRFiraBold[
+		Ligatures=TeX, 
+		UprightFont={* Bold}, 
+		SizeFeatures={Size=9.5}]{Fira Sans}
+	\newfontfamily\UCRFira[
+		Ligatures=TeX, 
+		UprightFont={*}, 
+		SizeFeatures={Size=9.5}]{Fira Sans}
+
+% SET WATERMARK FOR THE FIRST PAGE
+\usepackage[firstpage]{draftwatermark}
+	\SetWatermarkAngle{0}
+	%% Flip's preferred gray color watermark
+	\SetWatermarkText{\includegraphics{ucr_seal_gray.pdf}}
+	%% UCR's preferred color for watermark (yellow)
+	% \SetWatermarkText{\includegraphics{ucr_seal_yellow.pdf}}
+	
+
+% PAGE LAYOUT HACKS, tex.stackexchange: 325926
+% Style of the plain page:
+\usepackage[top=1in, bottom=1.25in, left=1in, right=1in, footskip=.875in]{geometry} 
+\usepackage{afterpage}
+
+% HEADER/FOOTER HACKS
+\usepackage{fancyhdr}
+	\fancypagestyle{firststyle}{
+		\fancyhead[L]{%
+			\hspace{-.2in}
+			\includegraphics[width=2.5in]{ucrlogo}%\\
+%			{\UCRsans \textcolor{white}{.}\\\textcolor{white}{.}}%
+			}%
+		\fancyhead[R]{
+		\begin{minipage}[b]{1.3in}
+			{\UCRFiraBold \textcolor{UCRnavy}{Department of\\[-.3em]Physics \& Astronomy}}\\[-.2em]
+			{\UCRFira \textcolor{UCRnavy}{900 University Avenue\\[-.2em]Riverside, CA 92521}}%
+		\end{minipage}%
+		}
+		\fancyfoot[C]{\footnotesize \UCRrift \textcolor{UCRnavy}{
+			physics.ucr.edu \quad$\cdot$\quad 
+			Tel: 951.827.5331 \quad$\cdot$\quad 
+			Fax: 951.827.4529}}
+		\renewcommand{\headrulewidth}{0pt}
+		\renewcommand{\footrulewidth}{0pt}
+		% \renewcommand{\headheight}{2in}
+	}
+	\fancypagestyle{empty}{
+		\fancyhead[L]{}
+		\fancyhead[R]{}
+		\fancyfoot[C]{\footnotesize \UCRrift \textcolor{UCRnavy}{
+			physics.ucr.edu \quad$\cdot$\quad 
+			Tel: 951.827.5331 \quad$\cdot$\quad 
+			Fax: 951.827.4529}} % no page number
+		\renewcommand{\headrulewidth}{0pt}
+		\renewcommand{\footrulewidth}{0pt}
+	}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%% MAIN DOCUMENT HERE %%
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+% Style of the firsr page:
+\newgeometry{top=1.875in, bottom=1.25in, left=1in, right=1in, footskip=.875in, headheight=1in}
+\afterpage{\aftergroup\restoregeometry}
+\thispagestyle{firststyle} 	% first page is in this style
+\pagestyle{empty}			% subsequent pages in theis style
+
+\today \bigskip
+
+% RECIPIENT
+\begin{singlespace}
+Some Institute \\
+1000 City of University \\
+City, State, Zip \par
+\end{singlespace}
+
+
+\bigskip
+
+Dear Colleague, \par \bigskip
+
+% \section*{section}
+
+Text goes here.
+
+\vspace{2cm}
+\hspace{.5\textwidth}
+\begin{minipage}[]{5in}
+Sincerely, \par \medskip
+
+\includegraphics[height=3\baselineskip]{Signature.pdf} \par
+Your Name \par
+... Professor\par
+UCR Physics \& Astronomy
+\end{minipage}
+
+
+
+\end{document}
