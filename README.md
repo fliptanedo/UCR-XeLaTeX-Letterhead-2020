@@ -1,6 +1,8 @@
 # UCR-XeLaTeX-Letterhead-2020
 Unofficial copy of UCR Letterhead for XeLaTeX based on 2020 UCR Brand Identity
 
+New Version: https://github.com/fliptanedo/UCR-XeLaTeX-Letterhead-2022
+
 Based on the UCR Visual Identity Guidelines 2020
 
 **Required:**
