@@ -3,6 +3,8 @@ Unofficial copy of UCR Letterhead for XeLaTeX based on 2020 UCR Brand Identity
 
 New Version: https://github.com/fliptanedo/UCR-XeLaTeX-Letterhead-2022
 
+See also Keith Miyake's [pandoc version](https://mail.google.com/mail/u/0/#search/pandoc+ucr/FMfcgzGmtrLJKRNPcsnDbCCqgTsfSFlf)
+
 Based on the UCR Visual Identity Guidelines 2020
 
 **Required:**
